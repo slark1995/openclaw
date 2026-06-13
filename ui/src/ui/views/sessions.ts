@@ -937,8 +937,7 @@ function renderRows(row: GatewaySessionRow, props: SessionsProps) {
           .value=${row.label ?? ""}
           ?disabled=${props.loading}
           placeholder=${t("sessionsView.optionalPlaceholder")}
-          style="width: 100%; max-width: 140px; padding: 6px 10px; font-size: 13px; border: 1px solid var(--border); border-radius: var(--radius-sm);"
-          @change=${(e: Event) => {
+          style="width: 100%; max-width: 240px; padding: 6px 10px; font-size: 13px; border: 1px solid var(--border); border-radius: var(--radius-sm); word-break: break-word;"          @change=${(e: Event) => {
             const value = normalizeOptionalString((e.target as HTMLInputElement).value) ?? null;
             props.onPatch(row.key, { label: value });
           }}
